@@ -2,10 +2,10 @@
 
 public partial class Posts
 {
-    public int PostId { get; init; }
-    public int UserId { get; set; }
-    public string PostTitle { get; set; } = "";
-    public string PostContent { get; set; } = "";
+    public required int PostId { get; init; }
+    public required int UserId { get; set; }
+    public required string PostTitle { get; set; }
+    public required string PostContent { get; set; }
     public DateTime PostCreated { get; set; }
     public DateTime PostUpdated { get; set; }
 
