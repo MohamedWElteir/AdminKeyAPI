@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using FirstAPI.DTOs;
 using FirstAPI.Data;
@@ -5,13 +6,14 @@ using FirstAPI.Models;
 namespace FirstAPI.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[ApiVersion("1.0")]
 public class UserSalaryController : ControllerBase
 {
     DataContextDapper _datacontextDapper;
     public UserSalaryController(IConfiguration configuration)
     {
-        _datacontextDapper = new DataContextDapper(configuration);
+        _datacontextDapper = DataContextDapper.GetInstance(configuration);
     }
 
 

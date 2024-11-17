@@ -2,13 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using FirstAPI.Models;
 namespace FirstAPI.Data
 {
-    public class DataContextEF : DbContext
+    public class DataContextEf : DbContext
     {
         private readonly IConfiguration _config;
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserJobInfo> UserJobInfo { get; set; }
         public virtual DbSet<UserSalary> UserSalary { get; set; }
-        public DataContextEF(IConfiguration configuration)
+        public DataContextEf(IConfiguration configuration)
         {
             _config = configuration;
         }

@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Security.Cryptography;
+using Asp.Versioning;
 using FirstAPI.Data;
 using FirstAPI.DTOs;
 using Microsoft.AspNetCore.Authorization;
@@ -11,16 +12,17 @@ namespace FirstAPI.Controllers
 {
     [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [ApiVersion("1.0")]
     public class AuthController : ControllerBase
     {
         private readonly DataContextDapper _dapper;
         private readonly AuthHelper _authHelper;
-        public AuthController(IConfiguration config)
+        public AuthController(IConfiguration configuration)
         {
 
-            _dapper = new DataContextDapper(config);
-            _authHelper = new AuthHelper(config);
+            _dapper = DataContextDapper.GetInstance(configuration);
+            _authHelper = new AuthHelper();
         }
 
 

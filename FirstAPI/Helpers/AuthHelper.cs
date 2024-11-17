@@ -4,19 +4,16 @@ using System.Text;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.IdentityModel.Tokens;
 
+
 namespace FirstAPI.Helpers;
 
 public class AuthHelper
 {
-    private readonly IConfiguration _config;
-    public AuthHelper(IConfiguration configuration)
-    {
-        _config = configuration;
-    }
+
     public byte[] GetPasswordHash(string password, byte[] passwordSalt)
     {
         var passwordHashString =
-            $"{_config.GetSection("AppSettings:PasswordKey").Value}{Convert.ToBase64String(passwordSalt)}";
+            $"{Environment.GetEnvironmentVariable("PASSWORD_KEY")}{Convert.ToBase64String(passwordSalt)}";
         var passwordHash = KeyDerivation.Pbkdf2(
             password: password,
             salt: Encoding.ASCII.GetBytes(passwordHashString),
@@ -36,7 +33,7 @@ public class AuthHelper
 
         SymmetricSecurityKey key = new(
             Encoding.UTF8.GetBytes(
-                _config.GetSection("AppSettings:TokenKey").Value ?? throw new Exception("TokenKey is null")
+                Environment.GetEnvironmentVariable("TOKEN_KEY") ?? throw new Exception("Token key is null")
             )
         );
         SigningCredentials credentials = new(key, SecurityAlgorithms.HmacSha512Signature);

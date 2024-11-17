@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using FirstAPI.DTOs;
 using FirstAPI.Data;
@@ -6,14 +7,15 @@ using AutoMapper;
 namespace FirstAPI.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/v{version:apiVersion}/[controller]")]
+[ApiVersion("1.0")]
 public class UserEFController : ControllerBase
 {
-    private readonly DataContextEF _entityFrameWork;
+    private readonly DataContextEf _entityFrameWork;
     private readonly IMapper _mapper;
     public UserEFController(IConfiguration configuration)
     {
-        _entityFrameWork = new DataContextEF(configuration);
+        _entityFrameWork = new DataContextEf(configuration);
         _mapper = new MapperConfiguration(cfg =>
         {
             cfg.CreateMap<UserDTO, User>();

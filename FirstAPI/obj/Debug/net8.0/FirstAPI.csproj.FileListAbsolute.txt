@@ -76,3 +76,15 @@ C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\obj\Debug\net8.0\FirstAPI.pdb
 C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\obj\Debug\net8.0\FirstAPI.genruntimeconfig.cache
 C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\obj\Debug\net8.0\ref\FirstAPI.dll
 C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\xunit.core.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Asp.Versioning.Http.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\pc\RiderProjects\FirstAPI\FirstAPI\obj\Debug\net8.0\FirstAPI.sourcelink.json

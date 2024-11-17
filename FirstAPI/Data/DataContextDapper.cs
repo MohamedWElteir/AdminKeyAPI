@@ -1,59 +1,69 @@
 using Dapper;
 using Microsoft.Data.SqlClient;
 using System.Data;
-using System.Threading.Tasks;
+
+
+
 namespace FirstAPI.Data
 {
-    class DataContextDapper
+
+    public class DataContextDapper
     {
-        private readonly IConfiguration _config;
-        public DataContextDapper(IConfiguration configuration)
+        private static DataContextDapper? _instance;
+        private static int _count;
+        private static readonly object Lock = new();
+
+        public static DataContextDapper GetInstance(IConfiguration configuration) // Singleton pattern
         {
-            _config = configuration;
+            if (_instance != null) return _instance;
+            lock (Lock) // Lock to prevent multiple threads from creating multiple instances
+            {
+                _instance ??= new DataContextDapper();
+            }
+            return _instance;
+        }
+
+        private DataContextDapper()
+        {
+
+           Console.Write($"Dapper instance created: {++_count}");
 
         }
 
         public IEnumerable<T> LoadData<T>(string sql)
         {
-            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            using IDbConnection dbConnection = new SqlConnection(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
             return dbConnection.Query<T>(sql);
         }
 
         public T LoadDataSingle<T>(string sql)
         {
-            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            using IDbConnection dbConnection = new SqlConnection(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
             return dbConnection.QuerySingle<T>(sql);
         }
 
         public bool ExecuteSql(string sql)
         {
-            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
-           return dbConnection.Execute(sql) > 0;
-
+            using IDbConnection dbConnection = new SqlConnection(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
+            return dbConnection.Execute(sql) > 0;
         }
 
         public int ExecuteSqlWithRowCount(string sql)
         {
-            IDbConnection dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
+            using IDbConnection dbConnection = new SqlConnection(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
             return dbConnection.Execute(sql);
-
         }
+
         public bool ExecuteSqlWithParameters(string sql, List<SqlParameter> sqlParameters)
         {
-            SqlCommand sqlCommand = new SqlCommand(sql);
+            using var dbConnection = new SqlConnection(Environment.GetEnvironmentVariable("CONNECTION_STRING"));
+            using var sqlCommand = new SqlCommand(sql, dbConnection);
             sqlCommand.Parameters.AddRange(sqlParameters.ToArray());
-            var dbConnection = new SqlConnection(_config.GetConnectionString("DefaultConnection"));
             dbConnection.Open();
-            sqlCommand.Connection = dbConnection;
             var rowsAffected = sqlCommand.ExecuteNonQuery();
             dbConnection.Close();
 
             return rowsAffected > 0;
         }
-
-
-
     }
-
 }
-
