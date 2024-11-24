@@ -78,13 +78,11 @@
 															}
 														},
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/Auth/Register",
-															"host": [
-																"{{baseUrl}}"
-															],
+															"raw": "//api/v<string>/Auth/Register",
 															"path": [
+																"",
 																"api",
-																"v{{version}}",
+																"v<string>",
 																"Auth",
 																"Register"
 															]
@@ -164,13 +162,11 @@
 															}
 														},
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/Auth/Login",
-															"host": [
-																"{{baseUrl}}"
-															],
+															"raw": "//api/v<string>/Auth/Login",
 															"path": [
+																"",
 																"api",
-																"v{{version}}",
+																"v<string>",
 																"Auth",
 																"Login"
 															]
@@ -250,13 +246,11 @@
 															}
 														},
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/Auth/ResetPassword",
-															"host": [
-																"{{baseUrl}}"
-															],
+															"raw": "//api/v<string>/Auth/ResetPassword",
 															"path": [
+																"",
 																"api",
-																"v{{version}}",
+																"v<string>",
 																"Auth",
 																"ResetPassword"
 															]
@@ -306,13 +300,11 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/Auth/RefreshToken",
-															"host": [
-																"{{baseUrl}}"
-															],
+															"raw": "//api/v<string>/Auth/RefreshToken",
 															"path": [
+																"",
 																"api",
-																"v{{version}}",
+																"v<string>",
 																"Auth",
 																"RefreshToken"
 															]
@@ -2191,10 +2183,12 @@
 							"id": "ffc20e5f-3746-478e-b1a4-647f880cb27c"
 						}
 					],
-					"id": "055c0886-9ce2-48dc-9e8f-9202d8d38ca8"
+					"id": "055c0886-9ce2-48dc-9e8f-9202d8d38ca8",
+					"description": "Version control. (Defaults to 1.0)"
 				}
 			],
-			"id": "1d80c164-f2b4-42df-a5ec-f39751ecc58c"
+			"id": "1d80c164-f2b4-42df-a5ec-f39751ecc58c",
+			"description": "The main API folder"
 		}
 	],
 	"variable": [
