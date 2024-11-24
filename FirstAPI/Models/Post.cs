@@ -1,6 +1,6 @@
 ﻿namespace FirstAPI.Models;
 
-public partial class Posts
+public partial class Post
 {
     public required int PostId { get; init; }
     public required int UserId { get; set; }

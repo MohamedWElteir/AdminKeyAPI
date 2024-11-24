@@ -2,22 +2,17 @@ using Microsoft.EntityFrameworkCore;
 using FirstAPI.Models;
 namespace FirstAPI.Data
 {
-    public class DataContextEf : DbContext
+    public class DataContextEf(IConfiguration configuration) : DbContext
     {
-        private readonly IConfiguration _config;
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserJobInfo> UserJobInfo { get; set; }
         public virtual DbSet<UserSalary> UserSalary { get; set; }
-        public DataContextEf(IConfiguration configuration)
-        {
-            _config = configuration;
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
            if (!optionsBuilder.IsConfigured)
            {
-               optionsBuilder.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
+               optionsBuilder.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
            }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

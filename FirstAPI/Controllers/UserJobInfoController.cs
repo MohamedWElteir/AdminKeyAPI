@@ -11,12 +11,7 @@ namespace FirstAPI.Controllers;
 
 public class UserJobInfoController : ControllerBase
 {
-    DataContextDapper _datacontextDapper;
-    public UserJobInfoController(IConfiguration configuration)
-    {
-        _datacontextDapper = DataContextDapper.GetInstance(configuration);
-    }
-
+    private readonly DataContextDapper _datacontextDapper = DataContextDapper.GetInstance();
 
 
     [HttpGet("GetUserJobInfo")]
@@ -24,14 +19,14 @@ public class UserJobInfoController : ControllerBase
     {
         return _datacontextDapper.LoadData<UserJobInfo>($"SELECT * from TutorialAppSchema.UserJobInfo");
     }
-    [HttpGet("GetUserJobInfo/{UserId}")]
-    public UserJobInfo GetUserJobInfo(int UserId)
+    [HttpGet("GetUserJobInfo/{userId}")]
+    public UserJobInfo GetUserJobInfo(int userId)
     {
-        return _datacontextDapper.LoadDataSingle<UserJobInfo>($"SELECT * from TutorialAppSchema.UserJobInfo WHERE UserId = {UserId}");
+        return _datacontextDapper.LoadDataSingle<UserJobInfo>($"SELECT * from TutorialAppSchema.UserJobInfo WHERE UserId = {userId}");
     }
 
     [HttpPost("AddUserJobInfo")]
-    public IActionResult AddUserJobInfo([FromBody] UserJobInfoDTO userJobInfo)
+    public IActionResult AddUserJobInfo([FromBody] UserJobInfoDto userJobInfo)
     {
         string sql = $"INSERT INTO TutorialAppSchema.UserJobInfo (UserId, JobTitle, Department) VALUES ('{userJobInfo.UserId}', '{userJobInfo.JobTitle}', '{userJobInfo.Department}')";
 

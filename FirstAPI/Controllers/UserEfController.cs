@@ -9,16 +9,16 @@ namespace FirstAPI.Controllers;
 [ApiController]
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
-public class UserEFController : ControllerBase
+public class UserEfController : ControllerBase
 {
     private readonly DataContextEf _entityFrameWork;
     private readonly IMapper _mapper;
-    public UserEFController(IConfiguration configuration)
+    public UserEfController(IConfiguration configuration)
     {
         _entityFrameWork = new DataContextEf(configuration);
         _mapper = new MapperConfiguration(cfg =>
         {
-            cfg.CreateMap<UserDTO, User>();
+            cfg.CreateMap<UserDto, User>();
         }).CreateMapper();
     }
 
@@ -38,7 +38,7 @@ public class UserEFController : ControllerBase
 
 
     [HttpPost("AddUser")]
-    public IActionResult AddUser([FromBody] UserDTO user)
+    public IActionResult AddUser([FromBody] UserDto user)
     {
         User newUser = _mapper.Map<User>(user);
 

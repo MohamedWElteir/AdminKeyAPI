@@ -1,12 +1,18 @@
+using System.Data;
 using Asp.Versioning;
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using FirstAPI.DTOs;
 using FirstAPI.Data;
+using FirstAPI.Helpers;
 using FirstAPI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.OutputCaching;
 
 namespace FirstAPI.Controllers;
 
+
+[Authorize]
 [ApiController]
 [Route("api/v{version:apiVersion}/[controller]")]
 [ApiVersion("1.0")]
@@ -14,49 +20,50 @@ namespace FirstAPI.Controllers;
 public class UserController : ControllerBase
 {
    private readonly DataContextDapper _datacontextDapper;
-   public UserController(IConfiguration configuration)
+   private readonly ReusableSql _reusableSql;
+   public UserController()
     {
-        _datacontextDapper = DataContextDapper.GetInstance(configuration);
+        _datacontextDapper = DataContextDapper.GetInstance();
+        _reusableSql = new ReusableSql();
     }
 
 
-
+    [AllowAnonymous]
     [HttpGet("GetUsers")]
     [OutputCache]
-    public IEnumerable<User> GetUser()
+    public IEnumerable<User> GetUser([FromQuery] int? userId = null, [FromQuery] bool? isActive = null , [FromRoute] string version = "1.0")
     {
-        return _datacontextDapper.LoadData<User>($"SELECT * from TutorialAppSchema.Users");
+        const string storedProcedure = "TutorialAppSchema.spUsers_Get";
+        var parameters = new DynamicParameters();
+        if (userId is > 0)
+        {
+            parameters.Add("@UserId", userId);
+        }
+        if (isActive.HasValue)
+        {
+            parameters.Add("@Active", isActive);
+        }
+
+        return _datacontextDapper.LoadData<User>(storedProcedure, parameters, CommandType.StoredProcedure);
     }
 
-    [HttpGet("GetUser/{userId}")]
-    public User GetUser(int userId)
-    {
-        return _datacontextDapper.LoadDataSingle<User>($"SELECT * from TutorialAppSchema.Users WHERE UserId = {userId}");
-    }
 
-    
-    [HttpPost("AddUser")]  
-    public IActionResult AddUser([FromBody] UserDTO user)
-    {
-        var sql = $"INSERT INTO TutorialAppSchema.Users (FirstName, LastName, Email, Gender, Active) VALUES ('{user.FirstName}', '{user.LastName}', '{user.Email}', '{user.Gender}', '{user.Active}')";
-        
-       return _datacontextDapper.ExecuteSql(sql) ? Ok() : throw new Exception("Error adding user");
-    }
 
-    [HttpPut("UpdateUser")]
-    public IActionResult UpdateUser(User user)
-    {
-        var sql = $"UPDATE TutorialAppSchema.Users SET FirstName = '{user.FirstName}', LastName = '{user.LastName}', Email = '{user.Email}', Gender = '{user.Gender}', Active = '{user.Active}' WHERE UserId = {user.UserId}";
 
-        return _datacontextDapper.ExecuteSql(sql) ? Ok("User updated") : throw new Exception("Error updating user");
+    [HttpPut("UpsertUser")]
+    public IActionResult UpsertUser(UserDto user, [FromRoute] string version = "1.0")
+    {
+        return _reusableSql.UpsertUser(user) ? Ok() : BadRequest("Error adding user");
     }
 
     [HttpDelete("DeleteUser/{userId}")]
-    public IActionResult DeleteUser(int userId)
+    public IActionResult DeleteUser(int userId, [FromRoute] string version = "1.0")
     {
-        string sql = $"DELETE FROM TutorialAppSchema.Users WHERE UserId = {userId}";
+       const string storedProcedure = $"TutorialAppSchema.spUser_Delete";
+       var parameters = new DynamicParameters();
+       parameters.Add("@UserId",userId);
 
-        return _datacontextDapper.ExecuteSql(sql) ? Ok($"User {userId} deleted") :throw new Exception("Error deleting user");
+        return _datacontextDapper.ExecuteSql(storedProcedure,parameters,CommandType.StoredProcedure) ? Ok($"User {userId} deleted") :BadRequest("Error deleting user");
 
     }
 }

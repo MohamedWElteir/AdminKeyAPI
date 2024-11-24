@@ -11,9 +11,9 @@ namespace FirstAPI.Controllers;
 public class UserSalaryController : ControllerBase
 {
     DataContextDapper _datacontextDapper;
-    public UserSalaryController(IConfiguration configuration)
+    public UserSalaryController()
     {
-        _datacontextDapper = DataContextDapper.GetInstance(configuration);
+        _datacontextDapper = DataContextDapper.GetInstance();
     }
 
 
@@ -30,7 +30,7 @@ public class UserSalaryController : ControllerBase
     }
 
     [HttpPost("AddUserSalaryInfo")]
-    public IActionResult AddUserJobInfo([FromBody] UserSalaryDTO userSalary) // is it logical to add salary without adding user first ?
+    public IActionResult AddUserJobInfo([FromBody] UserSalaryDto userSalary) // is it logical to add salary without adding user first ?
     {
         string sql = $"INSERT INTO TutorialAppSchema.UserSalary (Salary) VALUES ('{userSalary.Salary}')";  
 
