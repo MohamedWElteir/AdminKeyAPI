@@ -97,7 +97,8 @@
 											]
 										}
 									],
-									"id": "e51c2ce2-bf3d-4807-90c9-6e48ba67f310"
+									"id": "e51c2ce2-bf3d-4807-90c9-6e48ba67f310",
+									"description": "This"
 								},
 								{
 									"name": "Login",
@@ -319,7 +320,8 @@
 									"id": "226fdbf0-9409-4d69-9858-cdf5a601ef72"
 								}
 							],
-							"id": "dfd38f59-5c68-4774-aa4a-44754a44165e"
+							"id": "dfd38f59-5c68-4774-aa4a-44754a44165e",
+							"description": "**The auth folder where contains all of the authentication actions.**"
 						},
 						{
 							"name": "Post",
@@ -381,13 +383,16 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/v{{version}}/Post/GetPosts?postId=<integer>&userId=<integer>&searchItem=<string>",
+															"raw": "https://localhost:44378//api/v1/Post/GetPosts?postId=<integer>&userId=<integer>&searchItem=<string>",
+															"protocol": "https",
 															"host": [
-																"{{baseUrl}}"
+																"localhost"
 															],
+															"port": "44378",
 															"path": [
+																"",
 																"api",
-																"v{{version}}",
+																"v1",
 																"Post",
 																"GetPosts"
 															],
