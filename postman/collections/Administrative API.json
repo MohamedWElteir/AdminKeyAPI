@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "e6a4b560-9bf6-46a7-8944-e1871bf86550",
 		"name": "Administrative API",
+		"description": "This is the beginning of the collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_uid": "33758236-e6a4b560-9bf6-46a7-8944-e1871bf86550"
 	},
@@ -78,9 +79,8 @@
 															}
 														},
 														"url": {
-															"raw": "//api/v<string>/Auth/Register",
+															"raw": "/api/v<string>/Auth/Register",
 															"path": [
-																"",
 																"api",
 																"v<string>",
 																"Auth",
@@ -162,9 +162,8 @@
 															}
 														},
 														"url": {
-															"raw": "//api/v<string>/Auth/Login",
+															"raw": "/api/v<string>/Auth/Login",
 															"path": [
-																"",
 																"api",
 																"v<string>",
 																"Auth",
@@ -246,9 +245,8 @@
 															}
 														},
 														"url": {
-															"raw": "//api/v<string>/Auth/ResetPassword",
+															"raw": "/api/v<string>/Auth/ResetPassword",
 															"path": [
-																"",
 																"api",
 																"v<string>",
 																"Auth",
@@ -300,9 +298,8 @@
 														"method": "GET",
 														"header": [],
 														"url": {
-															"raw": "//api/v<string>/Auth/RefreshToken",
+															"raw": "/api/v<string>/Auth/RefreshToken",
 															"path": [
-																"",
 																"api",
 																"v<string>",
 																"Auth",
