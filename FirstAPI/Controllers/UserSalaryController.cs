@@ -1,4 +1,6 @@
+using System.Data;
 using Asp.Versioning;
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using FirstAPI.DTOs;
 using FirstAPI.Data;
@@ -18,15 +20,17 @@ public class UserSalaryController : ControllerBase
 
 
 
+
     [HttpGet("GetUserSalaryInfo")]
-    public IEnumerable<UserSalary> GetUserJobInfo()
+    public IEnumerable<UserSalary> GetUserJobInfo([FromQuery] int? userId)
     {
-        return _datacontextDapper.LoadData<UserSalary>($"SELECT * from TutorialAppSchema.UserSalary");
-    }
-    [HttpGet("GetUserSalaryInfo/{UserId}")]
-    public UserSalary GetUserJobInfo(int UserId)
-    {
-        return _datacontextDapper.LoadDataSingle<UserSalary>($"SELECT * from TutorialAppSchema.UserSalary WHERE UserId = {UserId}");
+        const string storedProcedure = "TutorialAppSchema.spUserSalary_Get";
+        var parameters = new DynamicParameters();
+        if (userId is > 0)
+        {
+            parameters.Add("@UserId", userId);
+        }
+        return _datacontextDapper.LoadData<UserSalary>(storedProcedure, parameters, CommandType.StoredProcedure);
     }
 
     [HttpPost("AddUserSalaryInfo")]

@@ -1,4 +1,6 @@
+using System.Data;
 using Asp.Versioning;
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using FirstAPI.DTOs;
 using FirstAPI.Data;
@@ -14,15 +16,18 @@ public class UserJobInfoController : ControllerBase
     private readonly DataContextDapper _datacontextDapper = DataContextDapper.GetInstance();
 
 
-    [HttpGet("GetUserJobInfo")]
-    public IEnumerable<UserJobInfo> GetUserJobInfo()
+
+    [HttpGet("GetUserJobInfo/")]
+    public UserJobInfo GetUserJobInfo([FromQuery] int? userId)
     {
-        return _datacontextDapper.LoadData<UserJobInfo>($"SELECT * from TutorialAppSchema.UserJobInfo");
-    }
-    [HttpGet("GetUserJobInfo/{userId}")]
-    public UserJobInfo GetUserJobInfo(int userId)
-    {
-        return _datacontextDapper.LoadDataSingle<UserJobInfo>($"SELECT * from TutorialAppSchema.UserJobInfo WHERE UserId = {userId}");
+        const string storedProcedure = "TutorialAppSchema.spUserJobInfo_Get";
+        var parameters = new DynamicParameters();
+        if (userId is > 0)
+        {
+            parameters.Add("@UserId", userId);
+        }
+
+        return _datacontextDapper.LoadDataSingle<UserJobInfo>(storedProcedure, parameters, CommandType.StoredProcedure);
     }
 
     [HttpPost("AddUserJobInfo")]
