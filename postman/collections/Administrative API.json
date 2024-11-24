@@ -1,0 +1,2212 @@
+{
+	"info": {
+		"_postman_id": "e6a4b560-9bf6-46a7-8944-e1871bf86550",
+		"name": "Administrative API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "33758236-e6a4b560-9bf6-46a7-8944-e1871bf86550"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v{version}",
+					"item": [
+						{
+							"name": "Auth",
+							"item": [
+								{
+									"name": "Register",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Auth/Register",
+											"id": "366afb17-a82a-4407-ad58-46eadd2b19da",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"department\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"salary\": \"<double>\",\n  \"password\": \"<string>\",\n  \"confirmPassword\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/Auth/Register",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"Auth",
+														"Register"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "0ebac98a-ab54-49db-92b3-bb3ccb6d1ed0",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"department\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"email\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"active\": \"<boolean>\",\n  \"salary\": \"<double>\",\n  \"password\": \"<string>\",\n  \"confirmPassword\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/Auth/Register",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"Auth",
+																"Register"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "e51c2ce2-bf3d-4807-90c9-6e48ba67f310"
+								},
+								{
+									"name": "Login",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Auth/Login",
+											"id": "994e5018-30ff-43b4-ae49-84cbd80d3fcc",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/Auth/Login",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"Auth",
+														"Login"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "d8d6dd90-2b20-451d-900b-a785113b6316",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/Auth/Login",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"Auth",
+																"Login"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "5b5d42b4-c659-4f3d-8c3e-559af995bd67"
+								},
+								{
+									"name": "ResetPassword",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Auth/ResetPassword",
+											"id": "2007c76a-7811-4874-bf8b-da6442597b65",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/Auth/ResetPassword",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"Auth",
+														"ResetPassword"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "7c5a7cd6-af23-4fa3-a866-5df1abb1b945",
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/Auth/ResetPassword",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"Auth",
+																"ResetPassword"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "42bed898-6f69-4a7a-8318-fc3c7c69d137"
+								},
+								{
+									"name": "RefreshToken",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Auth/RefreshToken",
+											"id": "6ae355c4-ae8e-4313-a595-4f582af226a2",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/Auth/RefreshToken",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"Auth",
+														"RefreshToken"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "3a9bd67c-8b33-4782-88cc-be19df5398f3",
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/Auth/RefreshToken",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"Auth",
+																"RefreshToken"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "226fdbf0-9409-4d69-9858-cdf5a601ef72"
+								}
+							],
+							"id": "dfd38f59-5c68-4774-aa4a-44754a44165e"
+						},
+						{
+							"name": "Post",
+							"item": [
+								{
+									"name": "GetPosts",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Post/GetPosts",
+											"id": "a4db1597-240e-4112-9c53-c86228c9cfad",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/Post/GetPosts?postId=<integer>&userId=<integer>&searchItem=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"Post",
+														"GetPosts"
+													],
+													"query": [
+														{
+															"key": "postId",
+															"value": "<integer>"
+														},
+														{
+															"key": "userId",
+															"value": "<integer>"
+														},
+														{
+															"key": "searchItem",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "f8e067a7-7c1b-4a19-addb-30f46f1cd756",
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/Post/GetPosts?postId=<integer>&userId=<integer>&searchItem=<string>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"Post",
+																"GetPosts"
+															],
+															"query": [
+																{
+																	"key": "postId",
+																	"value": "<integer>"
+																},
+																{
+																	"key": "userId",
+																	"value": "<integer>"
+																},
+																{
+																	"key": "searchItem",
+																	"value": "<string>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"postContent\": \"<string>\",\n    \"postId\": \"<integer>\",\n    \"postTitle\": \"<string>\",\n    \"userId\": \"<integer>\",\n    \"postCreated\": \"<dateTime>\",\n    \"postUpdated\": \"<dateTime>\"\n  },\n  {\n    \"postContent\": \"<string>\",\n    \"postId\": \"<integer>\",\n    \"postTitle\": \"<string>\",\n    \"userId\": \"<integer>\",\n    \"postCreated\": \"<dateTime>\",\n    \"postUpdated\": \"<dateTime>\"\n  }\n]"
+												}
+											]
+										}
+									],
+									"id": "18311cec-28b0-4b47-bf5f-952250d66149"
+								},
+								{
+									"name": "MyPosts",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Post/MyPosts",
+											"id": "20e07197-8277-4f83-9637-3813a76cfcc7",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/Post/MyPosts",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"Post",
+														"MyPosts"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "1886936a-3708-4644-9228-e95255310fcd",
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/Post/MyPosts",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"Post",
+																"MyPosts"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"postContent\": \"<string>\",\n    \"postId\": \"<integer>\",\n    \"postTitle\": \"<string>\",\n    \"userId\": \"<integer>\",\n    \"postCreated\": \"<dateTime>\",\n    \"postUpdated\": \"<dateTime>\"\n  },\n  {\n    \"postContent\": \"<string>\",\n    \"postId\": \"<integer>\",\n    \"postTitle\": \"<string>\",\n    \"userId\": \"<integer>\",\n    \"postCreated\": \"<dateTime>\",\n    \"postUpdated\": \"<dateTime>\"\n  }\n]"
+												}
+											]
+										}
+									],
+									"id": "a427230b-ff2a-431c-9fec-38df960a5db8"
+								},
+								{
+									"name": "UpsertPost",
+									"item": [
+										{
+											"name": "/api/v{{version}}/Post/UpsertPost",
+											"id": "ba8edf06-76ce-406b-a6c4-43622d84a294",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"postContent\": \"<string>\",\n  \"postTitle\": \"<string>\",\n  \"postId\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/Post/UpsertPost",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"Post",
+														"UpsertPost"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "dc283248-c130-4f98-b5cc-fff60f3086d9",
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"postContent\": \"<string>\",\n  \"postTitle\": \"<string>\",\n  \"postId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/Post/UpsertPost",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"Post",
+																"UpsertPost"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "458e8cc0-7270-45d6-b9ef-f01c76057c8a"
+								},
+								{
+									"name": "DeletePost",
+									"item": [
+										{
+											"name": "{postId}",
+											"item": [
+												{
+													"name": "{userId}",
+													"item": [
+														{
+															"name": "/api/v{{version}}/Post/DeletePost/:postId/:userId",
+															"id": "24b34d13-7b09-4b60-9a77-a7a780ad1ba0",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v{{version}}/Post/DeletePost/:postId/:userId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v{{version}}",
+																		"Post",
+																		"DeletePost",
+																		":postId",
+																		":userId"
+																	],
+																	"variable": [
+																		{
+																			"key": "postId",
+																			"value": "<integer>",
+																			"description": "(Required) "
+																		},
+																		{
+																			"key": "userId",
+																			"value": "<integer>",
+																			"description": "(Required) "
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "49117bab-998c-49f9-9cb2-e995bdbd3c17",
+																	"name": "OK",
+																	"originalRequest": {
+																		"method": "DELETE",
+																		"header": [],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/v{{version}}/Post/DeletePost/:postId/:userId",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"v{{version}}",
+																				"Post",
+																				"DeletePost",
+																				":postId",
+																				":userId"
+																			],
+																			"variable": [
+																				{
+																					"key": "postId"
+																				},
+																				{
+																					"key": "userId"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "text",
+																	"header": [],
+																	"cookie": []
+																}
+															]
+														}
+													],
+													"id": "9966c013-e1dd-45b0-96fb-3daae079514a"
+												}
+											],
+											"id": "f90f3056-bedc-4ca8-8358-1cb804fb85fa"
+										}
+									],
+									"id": "d3389ad5-179f-4130-a4af-5634eef68860"
+								}
+							],
+							"id": "73154eab-f1c2-40fb-858b-492cca3fe06c"
+						},
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "GetUsers",
+									"item": [
+										{
+											"name": "/api/v{{version}}/User/GetUsers",
+											"id": "6c5307f5-53b6-4412-b06f-1f82d5abf5ff",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/User/GetUsers?userId=<integer>&isActive=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"User",
+														"GetUsers"
+													],
+													"query": [
+														{
+															"key": "userId",
+															"value": "<integer>"
+														},
+														{
+															"key": "isActive",
+															"value": "<boolean>"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "29752080-0aea-4a16-8d0c-e894ce990d2c",
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/User/GetUsers?userId=<integer>&isActive=<boolean>",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"User",
+																"GetUsers"
+															],
+															"query": [
+																{
+																	"key": "userId",
+																	"value": "<integer>"
+																},
+																{
+																	"key": "isActive",
+																	"value": "<boolean>"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userId\": \"<integer>\",\n    \"active\": \"<boolean>\",\n    \"salary\": \"<double>\",\n    \"avgSalary\": \"<double>\"\n  },\n  {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userId\": \"<integer>\",\n    \"active\": \"<boolean>\",\n    \"salary\": \"<double>\",\n    \"avgSalary\": \"<double>\"\n  }\n]"
+												}
+											]
+										}
+									],
+									"id": "d4ec2009-ff21-4c7d-b16c-81f6e50a536a"
+								},
+								{
+									"name": "UpsertUser",
+									"item": [
+										{
+											"name": "/api/v{{version}}/User/UpsertUser",
+											"id": "f37e733f-44c0-4e6a-b11b-3e910e976991",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"active\": \"<boolean>\",\n  \"userId\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/User/UpsertUser",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"User",
+														"UpsertUser"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "3d74026b-9349-41bc-b3b2-dd039f8e0819",
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"active\": \"<boolean>\",\n  \"userId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/User/UpsertUser",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"User",
+																"UpsertUser"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "17017c31-56d5-4f29-ba62-63dcc94afe23"
+								},
+								{
+									"name": "DeleteUser",
+									"item": [
+										{
+											"name": "{userId}",
+											"item": [
+												{
+													"name": "/api/v{{version}}/User/DeleteUser/:userId",
+													"id": "744d9da2-f620-4a99-ab1f-d62371c048f1",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/User/DeleteUser/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"User",
+																"DeleteUser",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "b2ee62ba-6ee9-4712-a81b-e27a855f9632",
+															"name": "OK",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v{{version}}/User/DeleteUser/:userId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v{{version}}",
+																		"User",
+																		"DeleteUser",
+																		":userId"
+																	],
+																	"variable": [
+																		{
+																			"key": "userId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": []
+														}
+													]
+												}
+											],
+											"id": "45bb1773-97c1-4ce4-9ee7-4b998ad94ffe"
+										}
+									],
+									"id": "9d1e78b9-9d5f-4a73-bd72-aa31f83880fc"
+								}
+							],
+							"id": "938b2da9-b8d3-4c67-b162-04838e1d7038"
+						},
+						{
+							"name": "UserEF",
+							"item": [
+								{
+									"name": "GetUsers",
+									"item": [
+										{
+											"name": "/api/v{{version}}/UserEF/GetUsers",
+											"id": "68f828c3-6243-4c23-8d2c-bfdcc98cdc2d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserEF/GetUsers",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserEF",
+														"GetUsers"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "6666d460-b7fd-47af-a70a-eaf032666768",
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserEF/GetUsers",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserEF",
+																"GetUsers"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userId\": \"<integer>\",\n    \"active\": \"<boolean>\",\n    \"salary\": \"<double>\",\n    \"avgSalary\": \"<double>\"\n  },\n  {\n    \"department\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"gender\": \"<string>\",\n    \"jobTitle\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userId\": \"<integer>\",\n    \"active\": \"<boolean>\",\n    \"salary\": \"<double>\",\n    \"avgSalary\": \"<double>\"\n  }\n]"
+												}
+											]
+										}
+									],
+									"id": "3f3ff2c8-bbc9-48c4-b56f-990b4b488f90"
+								},
+								{
+									"name": "GetUser",
+									"item": [
+										{
+											"name": "{userId}",
+											"item": [
+												{
+													"name": "/api/v{{version}}/UserEF/GetUser/:userId",
+													"id": "12e866d7-4b4a-4ecb-9216-b329b9b83b41",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserEF/GetUser/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserEF",
+																"GetUser",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "7f0bf2d4-c0d0-4512-8a3c-5fa6353516b9",
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v{{version}}/UserEF/GetUser/:userId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v{{version}}",
+																		"UserEF",
+																		"GetUser",
+																		":userId"
+																	],
+																	"variable": [
+																		{
+																			"key": "userId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userId\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"salary\": \"<double>\",\n  \"avgSalary\": \"<double>\"\n}"
+														}
+													]
+												}
+											],
+											"id": "1b2cb3f4-6226-4c1e-b5cf-627d7e41e070"
+										}
+									],
+									"id": "fd7cd331-a863-45b1-b5a5-1cdca6a06e44"
+								},
+								{
+									"name": "AddUser",
+									"item": [
+										{
+											"name": "/api/v{{version}}/UserEF/AddUser",
+											"id": "7db9abcd-fb3c-4b4f-87e9-5c640ba83e29",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"active\": \"<boolean>\",\n  \"userId\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserEF/AddUser",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserEF",
+														"AddUser"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "369e64ea-3c3e-41e8-9ca2-27a82c5cde11",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"salary\": \"<double>\",\n  \"active\": \"<boolean>\",\n  \"userId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserEF/AddUser",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserEF",
+																"AddUser"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "5a53ebdf-7b0e-43c7-92a3-3a715e59a0af"
+								},
+								{
+									"name": "UpdateUser",
+									"item": [
+										{
+											"name": "/api/v{{version}}/UserEF/UpdateUser",
+											"id": "447dcc84-9c93-4744-8615-a8ead9bb012d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userId\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"salary\": \"<double>\",\n  \"avgSalary\": \"<double>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserEF/UpdateUser",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserEF",
+														"UpdateUser"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "fe2488d1-5639-4e2f-9763-1cc720dcede5",
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"department\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"gender\": \"<string>\",\n  \"jobTitle\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userId\": \"<integer>\",\n  \"active\": \"<boolean>\",\n  \"salary\": \"<double>\",\n  \"avgSalary\": \"<double>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserEF/UpdateUser",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserEF",
+																"UpdateUser"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "5c48dd52-664a-4625-ba70-aa4a33b1453b"
+								},
+								{
+									"name": "DeleteUser",
+									"item": [
+										{
+											"name": "{userId}",
+											"item": [
+												{
+													"name": "/api/v{{version}}/UserEF/DeleteUser/:userId",
+													"id": "48d513b1-25a2-4a81-8678-9d14ebfe9a13",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserEF/DeleteUser/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserEF",
+																"DeleteUser",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "d4dcbc38-728d-4226-a952-9577c7b0eed2",
+															"name": "OK",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v{{version}}/UserEF/DeleteUser/:userId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v{{version}}",
+																		"UserEF",
+																		"DeleteUser",
+																		":userId"
+																	],
+																	"variable": [
+																		{
+																			"key": "userId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": []
+														}
+													]
+												}
+											],
+											"id": "5c60e82c-e406-47de-be2c-822111a93463"
+										}
+									],
+									"id": "5857aabc-db8c-4c92-a885-912ac1e74b2c"
+								}
+							],
+							"id": "b03275e2-618a-4457-a400-b319f239fe79"
+						},
+						{
+							"name": "UserJobInfo",
+							"item": [
+								{
+									"name": "GetUserJobInfo",
+									"item": [
+										{
+											"name": "{userId}",
+											"item": [
+												{
+													"name": "/api/v{{version}}/UserJobInfo/GetUserJobInfo/:userId",
+													"id": "c43b6208-473c-43f6-a1f6-74bd011ba443",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/GetUserJobInfo/:userId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserJobInfo",
+																"GetUserJobInfo",
+																":userId"
+															],
+															"variable": [
+																{
+																	"key": "userId",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "28a573a0-1108-4526-9b55-8106169a6e9a",
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/GetUserJobInfo/:userId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v{{version}}",
+																		"UserJobInfo",
+																		"GetUserJobInfo",
+																		":userId"
+																	],
+																	"variable": [
+																		{
+																			"key": "userId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"userId\": \"<integer>\",\n  \"jobTitle\": \"<string>\",\n  \"department\": \"<string>\"\n}"
+														}
+													]
+												}
+											],
+											"id": "4d799e1b-cfea-4fde-a432-e19cd530c674"
+										},
+										{
+											"name": "/api/v{{version}}/UserJobInfo/GetUserJobInfo",
+											"id": "c3e9a9aa-001e-47cb-9b7a-39059d0554d2",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/GetUserJobInfo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserJobInfo",
+														"GetUserJobInfo"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "3d0f7cf8-57b5-4daf-9661-19b17b6184f4",
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/GetUserJobInfo",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserJobInfo",
+																"GetUserJobInfo"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"userId\": \"<integer>\",\n    \"jobTitle\": \"<string>\",\n    \"department\": \"<string>\"\n  },\n  {\n    \"userId\": \"<integer>\",\n    \"jobTitle\": \"<string>\",\n    \"department\": \"<string>\"\n  }\n]"
+												}
+											]
+										}
+									],
+									"id": "1bce11a5-1669-417b-bd1c-fa37681c9885"
+								},
+								{
+									"name": "AddUserJobInfo",
+									"item": [
+										{
+											"name": "/api/v{{version}}/UserJobInfo/AddUserJobInfo",
+											"id": "ddee09a8-5134-4c05-879a-ffc616678ef1",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userId\": \"<integer>\",\n  \"jobTitle\": \"<string>\",\n  \"department\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/AddUserJobInfo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserJobInfo",
+														"AddUserJobInfo"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "4ae931ce-880d-4bd0-b623-624930bd5494",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"userId\": \"<integer>\",\n  \"jobTitle\": \"<string>\",\n  \"department\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/AddUserJobInfo",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserJobInfo",
+																"AddUserJobInfo"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "28996692-c24e-41d8-afca-1f266deb1864"
+								},
+								{
+									"name": "UpdateUserJobInfo",
+									"item": [
+										{
+											"name": "/api/v{{version}}/UserJobInfo/UpdateUserJobInfo",
+											"id": "a81b8af5-f89d-40ec-8f0e-d01bb56f92fd",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userId\": \"<integer>\",\n  \"jobTitle\": \"<string>\",\n  \"department\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/UpdateUserJobInfo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserJobInfo",
+														"UpdateUserJobInfo"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "20bc9c9a-07bd-495b-a009-b871515eadee",
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"userId\": \"<integer>\",\n  \"jobTitle\": \"<string>\",\n  \"department\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/UpdateUserJobInfo",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserJobInfo",
+																"UpdateUserJobInfo"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "65c274c1-9ddd-4e7a-94ed-d4054f986f7e"
+								},
+								{
+									"name": "DeleteUserJobInfo",
+									"item": [
+										{
+											"name": "{UserId}",
+											"item": [
+												{
+													"name": "/api/v{{version}}/UserJobInfo/DeleteUserJobInfo/:UserId",
+													"id": "5f461e50-c718-4869-a660-59c24b91e55f",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/DeleteUserJobInfo/:UserId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserJobInfo",
+																"DeleteUserJobInfo",
+																":UserId"
+															],
+															"variable": [
+																{
+																	"key": "UserId",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "4f7913c5-d04c-47fb-b21d-3309834b417b",
+															"name": "OK",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v{{version}}/UserJobInfo/DeleteUserJobInfo/:UserId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v{{version}}",
+																		"UserJobInfo",
+																		"DeleteUserJobInfo",
+																		":UserId"
+																	],
+																	"variable": [
+																		{
+																			"key": "UserId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": []
+														}
+													]
+												}
+											],
+											"id": "9aea5808-68ef-4922-8f0e-8c5b1b115cfa"
+										}
+									],
+									"id": "52542b78-ed8c-42fc-b6fb-401e03815bd3"
+								}
+							],
+							"id": "01fb122e-d661-499b-b4d8-491d065e2d1a"
+						},
+						{
+							"name": "UserSalary",
+							"item": [
+								{
+									"name": "GetUserSalaryInfo",
+									"item": [
+										{
+											"name": "{UserId}",
+											"item": [
+												{
+													"name": "/api/v{{version}}/UserSalary/GetUserSalaryInfo/:UserId",
+													"id": "81c8cf92-7042-477e-a938-713b9e72ccc0",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/GetUserSalaryInfo/:UserId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserSalary",
+																"GetUserSalaryInfo",
+																":UserId"
+															],
+															"variable": [
+																{
+																	"key": "UserId",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "7f849825-f443-4483-ac32-53b6a9a59ba8",
+															"name": "OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "text/plain"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/GetUserSalaryInfo/:UserId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v{{version}}",
+																		"UserSalary",
+																		"GetUserSalaryInfo",
+																		":UserId"
+																	],
+																	"variable": [
+																		{
+																			"key": "UserId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"body": "{\n  \"userId\": \"<integer>\",\n  \"salary\": \"<double>\"\n}"
+														}
+													]
+												}
+											],
+											"id": "66976544-7c6b-4a6d-b229-7a55a0298bad"
+										},
+										{
+											"name": "/api/v{{version}}/UserSalary/GetUserSalaryInfo",
+											"id": "6013f45b-5d32-4261-9b39-7e5db18214f2",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/GetUserSalaryInfo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserSalary",
+														"GetUserSalaryInfo"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "419201db-5732-43f2-9e59-288fc2106ef5",
+													"name": "OK",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/GetUserSalaryInfo",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserSalary",
+																"GetUserSalaryInfo"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "[\n  {\n    \"userId\": \"<integer>\",\n    \"salary\": \"<double>\"\n  },\n  {\n    \"userId\": \"<integer>\",\n    \"salary\": \"<double>\"\n  }\n]"
+												}
+											]
+										}
+									],
+									"id": "408f7dee-f062-415c-b69e-e19cd03f29d6"
+								},
+								{
+									"name": "AddUserSalaryInfo",
+									"item": [
+										{
+											"name": "/api/v{{version}}/UserSalary/AddUserSalaryInfo",
+											"id": "151c9bbe-dbaf-4e82-8d9b-c2ff412bcb46",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"salary\": \"<double>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/AddUserSalaryInfo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserSalary",
+														"AddUserSalaryInfo"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "f54476fe-0f04-413e-b331-7f1b6768d0da",
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"salary\": \"<double>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/AddUserSalaryInfo",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserSalary",
+																"AddUserSalaryInfo"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "e9682c9f-64a2-48e2-904d-d17eb7a19c3b"
+								},
+								{
+									"name": "UpdateUserUpdateInfo",
+									"item": [
+										{
+											"name": "/api/v{{version}}/UserSalary/UpdateUserUpdateInfo",
+											"id": "9786319f-1ead-4806-be3c-5f19c80c4d4e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"userId\": \"<integer>\",\n  \"salary\": \"<double>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/UpdateUserUpdateInfo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v{{version}}",
+														"UserSalary",
+														"UpdateUserUpdateInfo"
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "7692cb41-f595-4e54-b89e-bb49ae732692",
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"userId\": \"<integer>\",\n  \"salary\": \"<double>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/UpdateUserUpdateInfo",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserSalary",
+																"UpdateUserUpdateInfo"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": []
+												}
+											]
+										}
+									],
+									"id": "a2e61e20-0e7c-42b0-b0b5-0da93f183649"
+								},
+								{
+									"name": "DeleteUserSalaryInfo",
+									"item": [
+										{
+											"name": "{UserId}",
+											"item": [
+												{
+													"name": "/api/v{{version}}/UserSalary/DeleteUserSalaryInfo/:UserId",
+													"id": "58ebbfcd-f4d4-41e5-812b-b1681deda157",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/DeleteUserSalaryInfo/:UserId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v{{version}}",
+																"UserSalary",
+																"DeleteUserSalaryInfo",
+																":UserId"
+															],
+															"variable": [
+																{
+																	"key": "UserId",
+																	"value": "<integer>",
+																	"description": "(Required) "
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "569692af-b350-4efd-b0ef-211d2f6a0ed1",
+															"name": "OK",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v{{version}}/UserSalary/DeleteUserSalaryInfo/:UserId",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v{{version}}",
+																		"UserSalary",
+																		"DeleteUserSalaryInfo",
+																		":UserId"
+																	],
+																	"variable": [
+																		{
+																			"key": "UserId"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": []
+														}
+													]
+												}
+											],
+											"id": "c64017b9-6c1a-4d0b-b416-6c7e89f6d4de"
+										}
+									],
+									"id": "c81c46b8-0022-4f1b-8ad7-1d903e0784a3"
+								}
+							],
+							"id": "ffc20e5f-3746-478e-b1a4-647f880cb27c"
+						}
+					],
+					"id": "055c0886-9ce2-48dc-9e8f-9202d8d38ca8"
+				}
+			],
+			"id": "1d80c164-f2b4-42df-a5ec-f39751ecc58c"
+		}
+	],
+	"variable": [
+		{
+			"id": "0a3ecc88-972d-4f08-afd0-9a0c1eaf330e",
+			"key": "baseUrl",
+			"value": "/"
+		},
+		{
+			"id": "c8aca895-eca6-4d5f-851a-5233f47ee22a",
+			"key": "version",
+			"value": "<string>"
+		}
+	]
+}
