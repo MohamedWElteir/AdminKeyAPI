@@ -146,5 +146,5 @@ These endpoints manage user salary information:
 
 ### Contributing
 
-Contributions are welcome! To contribute, simply open a pull request with your changes.
+Contributions are welcomed! To contribute, simply open a pull request with your changes.
 
