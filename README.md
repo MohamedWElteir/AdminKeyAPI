@@ -22,7 +22,7 @@ AdminKeyAPI is an ASP.NET Core Web API project that provides various endpoints f
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/yourusername/FirstAPI.git
+    git clone https://github.com/MohamedWElteir/FirstAPI.git
     cd FirstAPI
     ```
 
